@@ -157,7 +157,8 @@ export default {
 
   computed:{
     theme(){
-      return (this.$vuetify.theme.dark) ? 'dark' : 'light'
+      return (this.$vuetify.theme.dark) ? 'dark' : 'light';
+      
     },
     isMobile(){
       const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
