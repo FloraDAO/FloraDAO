@@ -37,8 +37,8 @@
         <v-btn plain text :ripple="false">
           <span class="text-capitalize">Vault</span>
         </v-btn>
-        <v-btn href="https://docs.google.com/document/d/1iO-RwNZ6faTxCK9DcjhSAOQWsse4EBGZSm3pKXlMcqQ/edit#" target="_blank" plain text :ripple="false">
-          <span class="text-capitalize">Litepaper</span>
+        <v-btn :href="`${publicPath}FloraDAO_Whitepaper.pdf`" download="FloraDAO_Whitepaper" plain text :ripple="false">
+          <span class="text-capitalize">Whitepaper</span>
         </v-btn>
         <v-btn plain text :ripple="false">
           <span class="text-capitalize">Curators</span>
@@ -96,12 +96,12 @@
             </v-btn>
           </v-col>
           <v-col cols="12">
-            <v-btn href="https://docs.google.com/document/d/1iO-RwNZ6faTxCK9DcjhSAOQWsse4EBGZSm3pKXlMcqQ/edit" target="_blank" text plain :ripple="false">
-              <span class="font-weight-light text-capitalize white--text">Litepaper</span>
+            <v-btn :href="`${publicPath}FloraDAO_Whitepaper.pdf`" download="FloraDAO_Whitepaper" text plain :ripple="false">
+              <span class="font-weight-light text-capitalize white--text">Whitepaper</span>
             </v-btn>
           </v-col>
           <v-col cols="12">
-            <v-btn to="/team" text plain :ripple="false">
+            <v-btn text plain :ripple="false">
               <span class="font-weight-light text-capitalize white--text">Curators</span>
             </v-btn>
           </v-col>
@@ -135,6 +135,7 @@ export default {
   data: () => ({
     opacity: 0.9,
     overlay: false,
+    publicPath: process.env.BASE_URL,
     socials: [
       {
         name: 'Email',
@@ -158,7 +159,7 @@ export default {
   computed:{
     theme(){
       return (this.$vuetify.theme.dark) ? 'dark' : 'light';
-      
+
     },
     isMobile(){
       const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -179,6 +180,10 @@ export default {
 
 .br-15 {
   border-radius: 15px !important;
+}
+
+a {
+  text-decoration: none;
 }
 
 .wave {
